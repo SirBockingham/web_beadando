@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Termékek</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Termékek listája</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<div class="container mt-4">
-    <h1>Termékek listája</h1>
+<div class="container">
+    <h1 class="my-4">Termékek listája</h1>
 
-    <!-- Új termék hozzáadása gomb -->
+    <!-- Gomb új termék hozzáadásához -->
     <a href="/products/new" class="btn btn-primary mb-3">Új termék hozzáadása</a>
 
-    <!-- Termékek listája -->
+    <!-- A termékek listája -->
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -30,8 +30,9 @@
             <td th:text="${product.price}"></td>
             <td th:text="${product.description}"></td>
             <td>
-                <!-- Módosítás és törlés gombok -->
+                <!-- Módosítás gomb -->
                 <a th:href="@{/products/edit/{id}(id=${product.id})}" class="btn btn-warning btn-sm">Módosítás</a>
+                <!-- Törlés form -->
                 <form th:action="@{/products/delete/{id}(id=${product.id})}" method="post" style="display:inline;">
                     <button type="submit" class="btn btn-danger btn-sm">Törlés</button>
                 </form>
@@ -42,7 +43,7 @@
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
